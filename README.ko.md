@@ -50,6 +50,33 @@ Python 기반 `beads-mcp`가 하는 것처럼, 이 서버는 `bd` CLI를 호출�
     - Command: `node`
     - Args: `[path-to-this-repo]/build/index.js`
 
+## 테스트
+
+이 프로젝트는 [Vitest](https://vitest.dev/)를 사용하여 테스트를 수행합니다. 테스트 스위트는 다음을 포함합니다:
+
+- **config.ts 테스트**: 설정 로딩 및 환경 변수 처리
+- **bdClient.ts 테스트**: 클라이언트 생성, 에러 클래스, 메서드 시그니처
+- **beads.ts 테스트**: BeadsManager 작업 (init, add, update, getAll)
+- **index.ts 테스트**: 헬퍼 함수 및 워크스페이스 컨텍스트 동작
+
+### 테스트 실행
+
+```bash
+# 모든 테스트를 한 번 실행
+npm test
+
+# watch 모드로 테스트 실행 (파일 변경 시 자동 재실행)
+npm run test:watch
+
+# UI와 함께 테스트 실행
+npm run test:ui
+
+# 커버리지 리포트와 함께 테스트 실행
+npm run test:coverage
+```
+
+총 74개의 테스트가 `bd` CLI 설치 없이도 핵심 기능을 검증합니다.
+
 ## Environment Variables
 
 공식 `beads-mcp` README 와 동일한 환경 변수를 지원합니다. (모두 선택 사항)
