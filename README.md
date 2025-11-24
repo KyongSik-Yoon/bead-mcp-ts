@@ -58,6 +58,33 @@ This server exposes the same MCP tool names and behavior as the official Python
    - Command: `node`
    - Args: `[path-to-this-repo]/build/index.js`
 
+## Testing
+
+This project uses [Vitest](https://vitest.dev/) for testing. The test suite includes:
+
+- **config.ts tests**: Configuration loading and environment variable handling
+- **bdClient.ts tests**: Client construction, error classes, and method signatures
+- **beads.ts tests**: BeadsManager operations (init, add, update, getAll)
+- **index.ts tests**: Helper functions and workspace context behavior
+
+### Running Tests
+
+```bash
+# Run all tests once
+npm test
+
+# Run tests in watch mode (re-runs on file changes)
+npm run test:watch
+
+# Run tests with UI
+npm run test:ui
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+All 74 tests validate core functionality without requiring the `bd` CLI to be installed.
+
 ## Environment Variables
 
 This implementation supports the same environment variables as the official
